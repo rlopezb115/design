@@ -1,0 +1,78 @@
+﻿#hd {
+    background-color: rgba(31, 31, 31, 1);
+    color: rgb(241,241,241);
+}
+
+    #hd a.nav-link:active,
+    #hd a.nav-link:hover {
+        background-color: rgb(69, 69, 69);
+    }
+
+#sidebar {
+    background-color: rgb(61,61,61);
+    color: rgb(241,241,241);
+}
+
+    #sidebar ul > li > a > i {
+        color: inherit;
+        color: rgb(200,200,200);
+    }
+
+    #sidebar .dropdown-indicator:after {
+        border-bottom-color: rgb(200,200,200);
+        border-right-color: rgb(200,200,200);
+    }
+
+    #sidebar ul.sp-1 {
+        background-color: inherit;
+    }
+
+        #sidebar ul.sp-2,
+        #sidebar ul.sp-1 > li > a.nav-link:hover,
+        #sidebar ul.sp-1 > li > a.nav-link:active,
+        #sidebar ul.sp-1 > li > a.lnk-open {
+            background-color: rgb(69,69,69);
+        }
+
+            #sidebar ul.sp-3,
+            #sidebar ul.sp-2 > li > a.nav-link:hover,
+            #sidebar ul.sp-2 > li > a.nav-link:active,
+            #sidebar ul.sp-2 > li > a.lnk-open {
+                background-color: rgb(77,77,77);
+            }
+
+                #sidebar ul.sp-4,
+                #sidebar ul.sp-3 > li > a.nav-link:hover,
+                #sidebar ul.sp-3 > li > a.nav-link:active,
+                #sidebar ul.sp-3 > li > a.lnk-open {
+                    background-color: rgb(85,85,85);
+                }
+
+                    #sidebar ul.sp-5,
+                    #sidebar ul.sp-4 > li > a.nav-link:hover,
+                    #sidebar ul.sp-4 > li > a.nav-link:active,
+                    #sidebar ul.sp-4 > li > a.lnk-open {
+                        background-color: rgb(93,93,93);
+                    }
+
+                        #sidebar ul.sp-6,
+                        #sidebar ul.sp-5 > li > a.nav-link:hover,
+                        #sidebar ul.sp-5 > li > a.nav-link:active,
+                        #sidebar ul.sp-5 > li > a.lnk-open {
+                            background-color: rgb(101,101,101);
+                        }
+
+                            #sidebar ul.sp-6 > li > a.nav-link:hover,
+                            #sidebar ul.sp-6 > li > a.nav-link:active,
+                            #sidebar ul.sp-6 > li > a.lnk-open {
+                                background-color: rgb(109,109,109);
+                            }
+
+                            #sidebar ul.sp-1 > li > a.nav-link.activo,
+                            #sidebar ul.sp-2 > li > a.nav-link.activo,
+                            #sidebar ul.sp-3 > li > a.nav-link.activo,
+                            #sidebar ul.sp-4 > li > a.nav-link.activo,
+                            #sidebar ul.sp-5 > li > a.nav-link.activo,
+                            #sidebar ul.sp-6 > li > a.nav-link.activo {
+                                background-color: rgb(43, 43, 43);
+                            }

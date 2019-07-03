@@ -1,0 +1,860 @@
+﻿<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - Systems AJR</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/theme/theme-dark.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3c272a5e0b.js"></script>
+</head>
+<body>
+    <!-- Head -->
+    <header id="hd">
+        <nav class="navbar navbar-expand">
+            <a class="navbar-brand col-sm-3 col-lg-2" href="#">
+                <!-- img class="img-fluid" src="~/assets/img/logo.png" / -->
+                <span>Sistemas AJR</span>
+            </a>
+            <div class="input-search w-100 ml-sm-auto d-sm-flex d-none">
+                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                <a href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <ul class="navbar-nav ml-sm-0 ml-auto">
+                <li class="dropdown">
+                    <a class="nav-item nav-link" href="#" id="dd-list-zonas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span data-toggle="tooltip" title="Lista de Zonas">
+                            <i class="fas fa-globe"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-list-zonas">
+                        <span class="dropdown-item-text">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <font class="pl-2" style="vertical-align:middle;">
+                                <font style="vertical-align:inherit;">
+                                    Zona de ubicación
+                                </font>
+                            </font>
+                        </span>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Zona 1 (Nacional)</a>
+                        <a class="dropdown-item" href="#">Zona 2 (Centro America)</a>
+                        <a class="dropdown-item" href="#">Zona 3 (Uruguay)</a>
+                        <a class="dropdown-item" href="#">Zona 4 (Galaxy DTV)</a>
+                        <a class="dropdown-item" href="#">Zona 5 (Puerto Rico)</a>
+                        <a class="dropdown-item" href="#">Zona 6 (AUSTRALIA)</a>
+                        <a class="dropdown-item" href="#">Zona 7 (Brasil)</a>
+                        <a class="dropdown-item" href="#">Zona 8 (U.S.A.)</a>
+                        <a class="dropdown-item" href="#">Zona 9 (Argentina,Chile,Bolivia,Paraguay,Uruguay)</a>
+                        <a class="dropdown-item" href="#">Zona 10 (Canada)</a>
+                        <a class="dropdown-item" href="#">Zona 11 (Intercompanias)</a>
+                        <a class="dropdown-item" href="#">Zona 12 (TELMEX)</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-item nav-link" href="#" id="dd-user-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span data-toggle="tooltip" title="Información de usuario">
+                            <i class="fas fa-user-circle"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-info">
+                        <div class="dropdown-item-text">
+                            <div class="d-flex align-items-stretch">
+                                <div class="pr-2">
+                                    <img class="rounded-circle" src="~/assets/img/avatar-default-h.jpg" alt="Raúl López" style="width: 40px; height: 40px;" />
+                                </div>
+                                <div>
+                                    <div class="font-weight-bold">Raul López Bautista</div>
+                                    <div class="font-weight-light">raul.lopezb@dish.com.mx</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Modificar Contraseña</span>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Salir</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item d-md-none">
+                    <a class="nav-link navbar-toggler d-block" href="javascript:;" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span>
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Oculto debajo de Head -->
+            <div style="height: 49px; width: 100%;"></div>
+
+            <!-- Menu Navegación lateral Izq. -->
+            <nav id="sidebar" class="collapse col-md-3 col-xl-2 d-md-block">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column sp-1">
+                        <li class="nav-item">
+                            <div id="sidebar-wp-search" class="d-sm-none d-flex">
+                                <input style="max-width: 25rem;" class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link activo" href="#">
+                                <i class="fas fa-home"></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarAdministracion" data-toggle="collapse" role="button" aria-controls="sidebarAdministracion">
+                                <i class="fas fa-user-cog"></i>
+                                <span>Administración</span>
+                            </a>
+                            <div class="collapse" id="sidebarAdministracion">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-key"></i>
+                                            <span>Seguridad</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-user-lock"></i>
+                                            <span>Activar Usuario</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-users"></i>
+                                            <span>Usuarios</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarConfiguracion" data-toggle="collapse" role="button" aria-controls="sidebarConfiguracion">
+                                <i class="fas fa-cog"></i>
+                                <span>Configuración</span>
+                            </a>
+                            <div id="sidebarConfiguracion" class="collapse">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarConfiguracionLocalizacion" data-toggle="collapse" role="button" aria-controls="sidebarConfiguracionLocalizacion">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Localización</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarConfiguracionLocalizacion">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-globe"></i>
+                                                        <span>Zonas</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-globe-americas"></i>
+                                                        <span>Paises</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Estados</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Ciudades</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span>Monedas</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-user-tie"></i>
+                                            <span>Puestos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-sitemap"></i>
+                                            <span>Areas</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-satellite-dish"></i>
+                                            <span>Tecnologías</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarAlmacen" data-toggle="collapse" role="button" aria-controls="sidebarAlmacen">
+                                <i class="fas fa-store-alt"></i>
+                                <span>Almacén</span>
+                            </a>
+                            <div class="collapse" id="sidebarAlmacen">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarAlmacenCatalogo" data-toggle="collapse" role="button" aria-controls="sidebarAlmacenCatalogo">
+                                            <i class="fas fa-swatchbook"></i>
+                                            <span>Catálogos</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarAlmacenCatalogo">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-store"></i>
+                                                        <span>Almacenes</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tags"></i>
+                                                        <span>Categorías Producto</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tasks"></i>
+                                                        <span>Tipos de Producto</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tasks"></i>
+                                                        <span>Tipos de Movimiento</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-user-friends"></i>
+                                                        <span>Proveedores</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarAlmacenOperacion" data-toggle="collapse" role="button" aria-controls="sidebarAlmacenOperacion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Operación</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarAlmacenOperacion">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-import"></i>
+                                                        <span>Entradas</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-export"></i>
+                                                        <span>Salidas</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-sync-alt"></i>
+                                                        <span>Transferencias</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-clipboard-list"></i>
+                                                        <span>Kardex</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-user-check"></i>
+                                                        <span>Asignados</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-upload"></i>
+                                                        <span>Carga directa</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarAlmacenReportes" data-toggle="collapse" role="button" aria-controls="sidebarAlmacenReportes">
+                                            <i class="fas fa-file-excel"></i>
+                                            <span>Reportes</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarAlmacenReportes">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Entrada de Equipo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Salida de Equipo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Inventario de Equipo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Historico de Equipo</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarVentas" data-toggle="collapse" role="button" aria-controls="sidebarVentas">
+                                <i class="fas fa-cash-register"></i>
+                                <span>Ventas</span>
+                            </a>
+                            <div class="collapse" id="sidebarVentas">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarVentasCatalogo" data-toggle="collapse" role="button" aria-controls="sidebarVentasCatalogo">
+                                            <i class="fas fa-swatchbook"></i>
+                                            <span>Catálogos</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarVentasCatalogo">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-building"></i>
+                                                        <span>Corporativos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-satellite"></i>
+                                                        <span>Señales</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Estatus</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarVentasOperacion" data-toggle="collapse" role="button" aria-controls="sidebarVentasOperacion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Operación</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarVentasOperacion">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-hdd"></i>
+                                                        <span>Reasignar Equipo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-users"></i>
+                                                        <span>Clientes</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarVentasReportes" data-toggle="collapse" role="button" aria-controls="sidebarVentasReportes">
+                                            <i class="fas fa-file-excel"></i>
+                                            <span>Reportes</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarVentasReportes">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación de Contratos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Contacto de Clientes</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Contratos Vencidos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Directorio de Clientes</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Directorio de Clientes Sin Señal</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Folios Contratos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Desactivación de Sistemas</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarOperaciones" data-toggle="collapse" role="button" aria-controls="sidebarOperaciones">
+                                <i class="fas fa-cogs"></i>
+                                <span>Operaciones</span>
+                            </a>
+                            <div class="collapse" id="sidebarOperaciones">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarOperacionesCatalogos" data-toggle="collapse" role="button" aria-controls="sidebarOperacionesCatalogos">
+                                            <i class="fas fa-swatchbook"></i>
+                                            <span>Catálogos</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarOperacionesCatalogos">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-invoice-dollar"></i>
+                                                        <span>Plantillas de Contrato</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-sort-numeric-up-alt"></i>
+                                                        <span>Consecutivo de Contrato</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarOperacionesOperacion" data-toggle="collapse" role="button" aria-controls="sidebarOperacionesOperacion">
+                                            <i class="fas fa-cog"></i>
+                                            <span>Operación</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarOperacionesOperacion">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-invoice-dollar"></i>
+                                                        <span>Requisición Contratos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-invoice-dollar"></i>
+                                                        <span>Contratos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-hdd"></i>
+                                                        <span>Equipos</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarOperacionesCartas" data-toggle="collapse" role="button" aria-controls="sidebarOperacionesCartas">
+                                            <i class="fas fa-envelope-open-text"></i>
+                                            <span>Cartas de Envío</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarOperacionesCartas">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Consultar</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Generar</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarFinanzas" data-toggle="collapse" role="button" aria-controls="sidebarFinanzas">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Finanzas</span>
+                            </a>
+                            <div class="collapse" id="sidebarFinanzas">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-file-invoice"></i>
+                                            <span>Estados de Cuenta</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarFinanzasFacturacion" data-toggle="collapse" role="button" aria-controls="sidebarFinanzasFacturacion">
+                                            <i class="fas fa-file-invoice"></i>
+                                            <span>Facturación</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarFinanzasFacturacion">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-user-friends"></i>
+                                                        <span>Actualizar Suscriptores</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-invoice-dollar"></i>
+                                                        <span>Facturación Señal</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-invoice-dollar"></i>
+                                                        <span>Facturación Equipos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-file-export"></i>
+                                                        <span>Envío de Facturas</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-money-check-alt"></i>
+                                            <span>Cobranza</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarFinanzasMovimientos" data-toggle="collapse" role="button" aria-controls="sidebarFinanzasMovimientos">
+                                            <i class="fas fa-wallet"></i>
+                                            <span>Movimientos Financieros</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarFinanzasMovimientos">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-minus-circle"></i>
+                                                        <span>Notas Crédito</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-plus-circle"></i>
+                                                        <span>Notas Cargo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-minus-circle"></i>
+                                                        <span>Abono por Correción</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-minus-circle"></i>
+                                                        <span>CCR</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-plus-circle"></i>
+                                                        <span>Cheque Devuelto</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-plus-circle"></i>
+                                                        <span>Renta Mensual</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-plus-circle"></i>
+                                                        <span>Reasignar Pago</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-minus-circle"></i>
+                                                        <span>Retención I.S.R.</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarFinanzasReportes" data-toggle="collapse" role="button" aria-controls="sidebarFinanzasReportes">
+                                            <i class="fas fa-file-excel"></i>
+                                            <span>Reportes</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarFinanzasReportes">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Antigüedad de Saldos</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Antigüedad de Saldos Lineal</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Antigüedad de Saldos Cartera Lineal</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Antigüedad de Saldos Cartera Lineal Formt</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación de Facturas</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Consulta de Factura</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación de Facturas de Equipo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación de Clientes No Facturados</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación Control Cobranza</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación Movimientos Cobranza</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Relación Pagos No Identificados</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Estado de Cuenta</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Estado de Cuenta Especial</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarFinanzasReportesAdmin" data-toggle="collapse" role="button" aria-controls="sidebarFinanzasReportesAdmin">
+                                            <i class="fas fa-file-excel"></i>
+                                            <span>Reportes Admin</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarFinanzasReportesAdmin">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Reporte Costo de Señal</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Reporte Facturas Cartera</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Reporte Nota de Crédito</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Reporte Distribución Fee</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-indicator" href="#sidebarMarketing" data-toggle="collapse" role="button" aria-controls="sidebarMarketing">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Marketing</span>
+                            </a>
+                            <div class="collapse" id="sidebarMarketing">
+                                <ul class="nav flex-column sp-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarMarketingOperacion" data-toggle="collapse" role="button" aria-controls="sidebarMarketingOperacion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Operación</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarMarketingOperacion">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-address-book"></i>
+                                                        <span>Contactos</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#sidebarMarketingReportes" data-toggle="collapse" role="button" aria-controls="sidebarMarketingReportes">
+                                            <i class="fas fa-file-excel"></i>
+                                            <span>Reportes</span>
+                                        </a>
+                                        <div class="collapse" id="sidebarMarketingReportes">
+                                            <ul class="nav flex-column sp-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fas fa-tag"></i>
+                                                        <span>Reporte de Contactos</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Archivos de Contrato</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 col-xl-10 ml-sm-auto">
+                <div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                    <div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                        </div>
+                    </div>
+                    <div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:200%;height:200%;left:0; top:0">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    @RenderBody()
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                        Tooltip with HTML
+                    </button>
+                </div>
+                <footer>
+                    <hr />
+                    <p>&copy; @DateTime.Now.Year - MVS Televisión</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/site/main.js" type="module"></script>
+</body>
+</html>
